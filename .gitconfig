@@ -1,0 +1,5 @@
+[alias]
+build = "!f() { \"
+            cd "$( dirname "${BASH_SOURCE[0]}" )/build" \
+            cmake .. \
+        }; f"
