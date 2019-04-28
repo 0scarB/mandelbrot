@@ -1,7 +1,0 @@
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/install/strip.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/edit_cache.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/mandelbrot.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/list_install_components.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/install/local.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/rebuild_cache.dir
-/home/oscar/Projects/mandelbrot/build/CMakeFiles/install.dir
