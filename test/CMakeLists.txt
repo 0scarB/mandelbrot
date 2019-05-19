@@ -8,7 +8,6 @@ find_package(SFML ${SFML_VERSION} REQUIRED COMPONENTS window graphics)
 add_executable(${TEST_TARGET_NAME} mandelbrottest.cpp)
 target_include_directories(${TEST_TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(${TEST_TARGET_NAME} PRIVATE -Werror)
-target_compile_features(${TEST_TARGET_NAME} PRIVATE cxx_std_11)
 target_link_libraries(${TEST_TARGET_NAME} PRIVATE Catch2::Catch2 sfml-window sfml-graphics ${PROJECT_NAME}lib)
 
 include(CTest)

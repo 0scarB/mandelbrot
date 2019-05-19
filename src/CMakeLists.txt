@@ -15,5 +15,4 @@ target_include_directories(${LIBRARY_TARGET_NAME}
 )
 
 target_compile_options(${LIBRARY_TARGET_NAME} PRIVATE -Werror)
-target_compile_features(${LIBRARY_TARGET_NAME} PRIVATE cxx_std_11)
 target_link_libraries(${LIBRARY_TARGET_NAME} PUBLIC sfml-window sfml-graphics)
