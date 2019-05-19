@@ -1,0 +1,19 @@
+set(LIBRARY_TARGET_NAME ${PROJECT_NAME}lib)
+
+find_package(SFML ${SFML_VERSION} REQUIRED COMPONENTS window graphics)
+
+file(GLOB_RECURSE LIB_IMPLEMENTATION_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE LIB_HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/../include/${PROJECT_NAME}/*.hpp)
+
+add_library(${LIBRARY_TARGET_NAME} ${LIB_IMPLEMENTATION_FILES} ${LIB_HEADER_FILES})
+target_include_directories(${LIBRARY_TARGET_NAME}
+    PUBLIC
+        $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include/${PROJECT_NAME}>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_compile_options(${LIBRARY_TARGET_NAME} PRIVATE -Werror)
+target_compile_features(${LIBRARY_TARGET_NAME} PRIVATE cxx_std_11)
+target_link_libraries(${LIBRARY_TARGET_NAME} PUBLIC sfml-window sfml-graphics)

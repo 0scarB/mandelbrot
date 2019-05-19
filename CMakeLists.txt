@@ -1,11 +1,17 @@
-cmake_minimum_required (VERSION 3.0)
-project (mandelbrot)
-file(GLOB SOURCES "src/*.cpp")
-add_executable(${PROJECT_NAME} ${SOURCES})
+include(ExternalProject)
 
-set(SFML_DIR "lib/SFML-2.5.1/lib/cmake/SFML")
-find_package(SFML 2.5.1 COMPONENTS window graphics REQUIRED)
-target_link_libraries(${PROJECT_NAME} sfml-window sfml-graphics)
+cmake_minimum_required(VERSION 3.8)
 
-install (TARGETS ${PROJECT_NAME}
-    DESTINATION bin)
+project(mandelbrot VERSION 0.1
+                   LANGUAGES CXX)
+
+set(PRE_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/pre_build)
+set(EXTERNAL_DEPENDENCIES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern)
+set(CATCH_VERSION 2.7.2)
+set(SFML_VERSION 2.5.1)
+set(SFML_DIR ${EXTERNAL_DEPENDENCIES_DIR}/SFML-${SFML_VERSION}/lib/cmake/SFML)
+set(CATCH_DIR ${EXTERNAL_DEPENDENCIES_DIR}/Catch2)
+
+add_subdirectory(src)
+add_subdirectory(app)
+add_subdirectory(test)
