@@ -4,13 +4,15 @@ language: cpp
 compiler:
     - gcc
 
-stages:
-    - build
-    - test
-
 jobs:
     include:
-        - stage: build
-          script: cd build && cmake ..
-        - stage: test
-          script: test/mandelbrottest
+        - name: "build"
+          script: ./build.sh --skip-tests
+          addons:
+            apt:
+              packages:
+                - cmake-data
+                - cmake
+        - name: "test"
+          sudo: required
+          script: ./build.sh && ./build/test/mandelbrottest

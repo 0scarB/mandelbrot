@@ -15,6 +15,10 @@ set(SFML_VERSION 2.5.1)
 set(SFML_DIR ${EXTERNAL_DEPENDENCIES_DIR}/SFML-${SFML_VERSION}/lib/cmake/SFML)
 set(CATCH_DIR ${EXTERNAL_DEPENDENCIES_DIR}/Catch2)
 
+option(BUILD_TESTS "Build mandelbrottest target" ON)
+
 add_subdirectory(src)
 add_subdirectory(app)
-add_subdirectory(test)
+if(BUILD_TESTS)
+    add_subdirectory(test)
+endif()
