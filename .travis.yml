@@ -1,0 +1,16 @@
+dist: xenial
+
+language: cpp
+compiler:
+    - gcc
+
+stages:
+    - build
+    - test
+
+jobs:
+    include:
+        - stage: build
+          script: cd build && cmake ..
+        - stage: test
+          script: test/mandelbrottest
