@@ -8,7 +8,6 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(PRE_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/pre_build)
 set(EXTERNAL_DEPENDENCIES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern)
 set(CATCH_VERSION 2.7.2)
 set(SFML_VERSION 2.5.1)
@@ -17,7 +16,7 @@ set(CATCH_DIR ${EXTERNAL_DEPENDENCIES_DIR}/Catch2)
 
 option(BUILD_TESTS "Build mandelbrottest target" ON)
 
-add_subdirectory(src)
+add_subdirectory(src/mandelbrot_gui)
 add_subdirectory(app)
 if(BUILD_TESTS)
     add_subdirectory(test)

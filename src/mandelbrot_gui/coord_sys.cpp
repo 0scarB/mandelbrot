@@ -1,4 +1,4 @@
-#include "gui/coordsys.hpp"
+#include "coord_sys.hpp"
 
 CoordSys::CoordSys()
 {

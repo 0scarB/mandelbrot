@@ -15,4 +15,4 @@ jobs:
                 - cmake
         - name: "test"
           sudo: required
-          script: ./build.sh && ./build/test/mandelbrottest
+          script: ./build.sh && ./build/test/mandelbrot_test
